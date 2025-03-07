@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('templates', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('description')->nullable();
-            $table->string('file_path'); // To store template files
+            $table->text('description');
+            $table->string('file_path');
             $table->timestamps();
         });
     }
