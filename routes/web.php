@@ -17,10 +17,13 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+use App\Http\Controllers\ResumeController;
 use App\Http\Controllers\TemplateController;
 use App\Http\Controllers\InquiryController;
 
+Route::resource('resumes', ResumeController::class);
 Route::resource('templates', TemplateController::class);
 Route::resource('inquiries', InquiryController::class);
+
 
 require __DIR__.'/auth.php';
