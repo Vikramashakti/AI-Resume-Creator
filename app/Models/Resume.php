@@ -5,14 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Template extends Model
+class Resume extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'name',
-        'description',
-        'file_path',
+        'user_id',
+        'title',
+        'content',
+        'status',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
 
